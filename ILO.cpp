@@ -14,7 +14,7 @@ ILO::ILO(const string& name, const string& user, const string& pass) : name(name
     const string userPass = string{R"({"UserName":")" + this->getUser() + R"(")" + ',' + R"("Password":")" + this->getPass() + "\"}"};
 
     auto r = cpr::Post(cpr::Url{https + this->name + SESSION},
-//                       cpr::Body{R"({\"UserName\":root, "Password":"3tango11"})"},
+//                       cpr::Body{R"({\"UserName\":root, "Password":"change_me"})"},
 //                       cpr::Body{my_json.dump()},
                        cpr::Body{userPass},
                        cpr::Header{{"Content-Type", "application/json"}},
